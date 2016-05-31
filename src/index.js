@@ -42,7 +42,12 @@ export default class TypeScriptPlugin extends Plugin {
     //change file extname
     this.file.extname = this.options.ext || '.js';
   }
-  
+  /**
+   * use cache
+   */
+  static cache(){
+    return true;
+  }
   /**
    * use cluster
    */
