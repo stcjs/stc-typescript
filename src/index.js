@@ -1,5 +1,6 @@
 import Plugin from 'stc-plugin';
-import ts from 'typescript';
+
+let ts = null;
 
 /**
  * TypeScript transpile
@@ -9,6 +10,10 @@ export default class TypeScriptPlugin extends Plugin {
    * run
    */
   async run(){
+    if(!ts){
+      ts = require('typescript');
+    }
+    
     let content = await this.getContent('utf8');
     let diagnostics = [];
     let output = ts.transpileModule(content, {
@@ -40,7 +45,7 @@ export default class TypeScriptPlugin extends Plugin {
   update(ret){
     this.setContent(ret.content);
     //change file extname
-    this.file.extname = this.options.ext || '.js';
+    this.file.extname = this.options.extname || '.js';
   }
   /**
    * use cache
