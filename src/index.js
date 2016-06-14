@@ -45,7 +45,7 @@ export default class TypeScriptPlugin extends Plugin {
   update(ret){
     this.setContent(ret.content);
     //change file extname
-    this.file.extname = this.options.extname || '.js';
+    this.file.extname = this.options.extname || 'js';
   }
   /**
    * use cache
