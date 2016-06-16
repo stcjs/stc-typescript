@@ -24,7 +24,8 @@
   "main": "lib/index.js",
   "dependencies": {
     "babel-runtime": "^6.9.2",
-    "typescript": "^1.8.10"
+    "typescript": "^1.8.10",
+    "stc-plugin": "1.x.x"
   },
   "devDependencies": {
     "ava": "^0.14.0",
