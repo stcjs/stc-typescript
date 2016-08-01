@@ -48,6 +48,12 @@ export default class TypeScriptPlugin extends Plugin {
     this.file.extname = this.options.extname || 'js';
   }
   /**
+   * default include
+   */
+  static include(){
+    return /\.ts$/;
+  }
+  /**
    * use cache
    */
   static cache(){
